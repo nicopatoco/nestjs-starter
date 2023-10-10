@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json.schemastore.org/nest-cli",
+  "collection": "@nestjs/schematics",
+  "sourceRoot": "apps/moca/src",
+  "compilerOptions": {
+    "deleteOutDir": true,
+    "webpack": true,
+    "tsConfigPath": "apps/moca/tsconfig.app.json"
+  },
+  "monorepo": true,
+  "root": "apps/moca",
+  "projects": {
+    "moca": {
+      "type": "application",
+      "root": "apps/moca",
+      "entryFile": "main",
+      "sourceRoot": "apps/moca/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/moca/tsconfig.app.json"
+      }
+    },
+    "api": {
+      "type": "application",
+      "root": "apps/api",
+      "entryFile": "main",
+      "sourceRoot": "apps/api/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/api/tsconfig.app.json"
+      }
+    },
+    "cats": {
+      "type": "library",
+      "root": "libs/cats",
+      "entryFile": "index",
+      "sourceRoot": "libs/cats/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/cats/tsconfig.lib.json"
+      }
+    },
+    "dogs": {
+      "type": "library",
+      "root": "libs/dogs",
+      "entryFile": "index",
+      "sourceRoot": "libs/dogs/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/dogs/tsconfig.lib.json"
+      }
+    }
+  }
+}
